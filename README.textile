@@ -6,7 +6,7 @@ h2. Installation
 
 bc. $ gem install rspec_attr_extensions
 
-h2. An example
+h2. The TestClass
 
 <pre><code>class TestClass
 

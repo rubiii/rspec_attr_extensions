@@ -6,9 +6,10 @@ h2. Installation
 
 bc. $ gem install rspec_attr_extensions
 
-h2. The TestClass
+h2. An example
 
-bc. class TestClass
+<pre><code>
+class TestClass
 
   def initialize
     @user_id, @name, @admin = 123, "Jungle Julia", false
@@ -20,20 +21,21 @@ bc. class TestClass
   attr_accessor :name
 
 end
+</pre></code>
 
-h2. Verify that the TestClass contains an attr_reader (for one or more given fields)
+h3. Verify that the TestClass contains an attr_reader (for one or more given fields)
 
 bc. describe TestClass do
   it_should_have_an_attr_reader_for :user_id, :admin
 end
 
-h2. Verify that the TestClass contains an attr_writer (for one or more given fields)
+h3. Verify that the TestClass contains an attr_writer (for one or more given fields)
 
 bc. describe TestClass do
   it_should_have_an_attr_writer_for :admin
 end
 
-h2. Verify that the TestClass contains an attr_accessor (for one or more given fields)
+h3. Verify that the TestClass contains an attr_accessor (for one or more given fields)
 
 bc. describe TestClass do
   it_should_have_an_attr_accessor_for :name

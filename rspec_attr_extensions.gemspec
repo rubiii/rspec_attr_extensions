@@ -18,5 +18,4 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8", "--title", "RSpec attr extensions", "--line-numbers", "--inline-source"]
 
   s.add_development_dependency "rspec", ">= 1.2.8"
-  s.add_development_dependency "mocha", ">= 0.9.7"
 end

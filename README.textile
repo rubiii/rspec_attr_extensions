@@ -1,0 +1,40 @@
+h1. RSpec attr extensions
+
+p. "RDoc":http://rdoc.info/projects/rubiii/rspec_attr_extensions | "Continuous Integration":http://runcoderun.com/rubiii/rspec_attr_extensions | "Metrics":http://getcaliper.com/caliper/project?repo=git://github.com/rubiii/rspec_attr_extensions.git
+
+h2. Installation
+
+bc. $ gem install rspec_attr_extensions
+
+h2. The TestClass
+
+bc. class TestClass
+
+  def initialize
+    @user_id, @name, @admin = 123, "Jungle Julia", false
+  end
+
+  attr_reader :user_id, :admin
+  attr_writer :admin
+
+  attr_accessor :name
+
+end
+
+h2. Verify that the TestClass contains an attr_reader (for one or more given fields)
+
+bc. describe TestClass do
+  it_should_have_an_attr_reader_for :user_id, :admin
+end
+
+h2. Verify that the TestClass contains an attr_writer (for one or more given fields)
+
+bc. describe TestClass do
+  it_should_have_an_attr_writer_for :admin
+end
+
+h2. Verify that the TestClass contains an attr_accessor (for one or more given fields)
+
+bc. describe TestClass do
+  it_should_have_an_attr_accessor_for :name
+end

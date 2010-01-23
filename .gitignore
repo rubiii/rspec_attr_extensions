@@ -1,0 +1,8 @@
+.DS_Store
+nbproject
+pkg
+rdoc
+rcov
+.loadpath
+.project
+.autotest

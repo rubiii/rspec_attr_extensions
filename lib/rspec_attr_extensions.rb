@@ -19,8 +19,6 @@ def it_should_have_an_attr_writer_for(*one_or_more_fields)
 end
 
 def it_should_have_an_attr_accessor_for(*one_or_more_fields)
-  one_or_more_fields.each do |field|
-    it_should_have_an_attr_reader_for *one_or_more_fields
-    it_should_have_an_attr_writer_for *one_or_more_fields
-  end
+  it_should_have_an_attr_reader_for *one_or_more_fields
+  it_should_have_an_attr_writer_for *one_or_more_fields
 end

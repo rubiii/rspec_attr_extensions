@@ -6,36 +6,41 @@ h2. Installation
 
 bc. $ gem install rspec_attr_extensions
 
-h2. The TestClass
+h2. An example
 
-<pre><code>class TestClass
+p. Let's test that TheHoff contains various attr_* methods.
+
+<pre><code>class TheHoff
 
   def initialize
-    @user_id, @name, @admin = 123, "Jungle Julia", false
+    @hair_style = "curly"
+    @smash_hit = "Looking for Freedom"
+    @date_of_birth = "July 17, 1952"
   end
 
-  attr_reader :user_id, :admin
-  attr_writer :admin
+  attr_reader :smash_hit, :date_of_birth
+  attr_writer :smash_hit
 
-  attr_accessor :name
+  attr_accessor :hair_style
 
 end
 </pre></code>
 
-h2. TestClass should have an attr_reader for :user_id and :admin
+p. Load rspec_attr_extensions in your spec_helper file.
 
-bc. describe TestClass do
-  it_should_have_an_attr_reader_for :user_id, :admin
+bc. require "spec"
+require "rspec_attr_extensions"
+
+p. And use the test methods provided by this library to clean up your specs.
+
+<pre><code>require "spec_helper"
+
+describe TheHoff do
+
+  it_should_have_an_attr_reader_for :smash_hit, :date_of_birth
+  it_should_have_an_attr_writer_for :smash_hit
+
+  it_should_have_an_attr_accessor_for :hair_style
+
 end
-
-h2. TestClass should have an attr_writer for :admin
-
-bc. describe TestClass do
-  it_should_have_an_attr_writer_for :admin
-end
-
-h2. TestClass should have an attr_accessor for :name
-
-bc. describe TestClass do
-  it_should_have_an_attr_accessor_for :name
-end
+</code></pre>

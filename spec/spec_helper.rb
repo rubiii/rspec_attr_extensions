@@ -3,15 +3,17 @@ require "spec"
 
 require "rspec_attr_extensions"
 
-class TestClass
+class TheHoff
 
   def initialize
-    @user_id, @name, @admin = 123, "Jungle Julia", false
+    @hair_style = "curly"
+    @smash_hit = "Looking for Freedom"
+    @date_of_birth = "July 17, 1952"
   end
 
-  attr_reader :user_id, :admin
-  attr_writer :admin
+  attr_reader :smash_hit, :date_of_birth
+  attr_writer :smash_hit
 
-  attr_accessor :name
+  attr_accessor :hair_style
 
 end
